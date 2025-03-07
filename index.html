@@ -8,16 +8,26 @@
     <title>HomePage</title>
     <link rel="stylesheet" href="./assets/style.css">
     <link rel="shortcut icon" href="./assets/images/home.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 </head>
 
 <body>
     <div class="chatbot-conainer">
-        <h2>CHATBOT</h2>
+        <div class="header-section">
+            <h2>CHATBOT</h2>
+            <button class="logout" id="logout-btn">Log out</button>
+        </div>
         <div class="chatbot-body"></div>
-        <input type="text" class="chatbot-int" id="chatbot-field">
-        <button class="btn-send"> <img src="./assets/images/paper-plane-regular.svg" alt=""></button>
+        <div class="input-field">
+            <input type="text" class="chatbot-int" id="chatbot-field" placeholder="Ask Anything">
+            <button class="btn-send"> 
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2 160 448c0 17.7 14.3 32 32 32s32-14.3 32-32l0-306.7L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>
+            </button>
+        </div>
     </div>
-    <button class="logout" id="logout-btn">Log out</button>
+    <!-- <h2>This is a custom Chatbot which takes predefined Content </h2> -->
+   
    <script type="module" src="./firebaseauth.js"></script>
 </body>
 
