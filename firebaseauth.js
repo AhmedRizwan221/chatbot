@@ -4,22 +4,22 @@ import {onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/1
 // Check if user is logged in or not
 onAuthStateChanged(auth, (user) => {
     if (user) {
-        // User is logged in, redirect to chatbot page
+        // check user is login 
         if (window.location.pathname.includes("login.html")) {
             window.location.href = "index.html";
         }
     } else {
-        // User is not logged in, redirect to login page
         if (!window.location.pathname.includes("login.html")) {
             window.location.href = "login.html";
         }
     }
 });
 
-// Logout function (Add this inside a logout button in index.html)
-document.getElementById("logout-btn")?.addEventListener("click", async () => {
+// for logout 
+const logout = document.getElementById("logout-btn");
+logout.addEventListener("click", async () => {
     await signOut(auth);
-    window.location.href = "login.html"; // Redirect to login page
+    window.location.href = "login.html";
 });
 
 

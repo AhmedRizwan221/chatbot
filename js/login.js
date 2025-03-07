@@ -6,7 +6,8 @@ import {collection, addDoc} from "https://www.gstatic.com/firebasejs/10.0.0/fire
 const btn = document.querySelector('#submit-btn');
 
 // add event listener on that btn
-btn.addEventListener('click', async function () {
+btn.addEventListener('click', async function (e) {
+    e.preventDefault();
     const name = document.querySelector('#name').value;
     const email = document.querySelector('#email').value;
     const password = document.querySelector('#password').value;
