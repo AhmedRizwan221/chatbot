@@ -64,5 +64,7 @@
 }
 
 @media screen and (max-width: 480px) {
-  
+    .chatbot-conainer {
+        height: calc(100vh - 50px);
+    }
 }
