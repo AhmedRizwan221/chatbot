@@ -1,6 +1,6 @@
-import {auth, db} from "../firebaseconfig.js";
-import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js"
-import {collection, addDoc} from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
+import { auth, db } from "../firebaseconfig.js";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+import { collection, addDoc } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
 
 // DOM element selection
 const btn = document.querySelector('#submit-btn');
@@ -19,6 +19,7 @@ btn.addEventListener('click', async function (e) {
 
         // add users email in firebase 
         await addDoc(collection(db, "users"), {
+            name:name,
             email: email,
             createdAt: new Date()
         });
@@ -27,5 +28,6 @@ btn.addEventListener('click', async function (e) {
 
     } catch (err) {
         console.error(err.message);
+        alert('Login Failed! This eamil already exist ');
     }
 });
