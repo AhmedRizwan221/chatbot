@@ -3,6 +3,7 @@ const bot_reply = document.querySelector('.chatbot-body');
 const btn = document.querySelector('.btn-send');
 
 // send message 
+document.addEventListener("DOMContentLoaded", () => {
 btn.addEventListener('click', sendMessage);
 
 userInput.addEventListener('keypress', function (ev) {
@@ -47,3 +48,4 @@ function getBotRespond(input) {
 
     return responses[input] || "I'm not sure about that. Can you rephrase?";
 }
+});
